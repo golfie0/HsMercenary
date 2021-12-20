@@ -6,6 +6,6 @@ from .models import *
 admin.site.register(Card)
 admin.site.register(User)
 admin.site.register(Deck)
-# admin.site.register(Post)
-# admin.site.register(Comment)
+admin.site.register(Post)
+admin.site.register(Comment)
 
