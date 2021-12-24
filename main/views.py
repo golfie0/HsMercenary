@@ -4,10 +4,18 @@ from .models import Post
 
 # Create your views here.
 def RenderHomePage(request):
-    return HttpResponse('<h1>dog</h1>')
+
+    posts = Post.objects.all()
+
+
+    context = {'posts':posts}
+    return render(request, 'main/home.html', context)
 
 def viewPost(request, uid):
-    return HttpResponse('post uid:', str(uid))
+    post = Post.objects.get(uid = uid)
+
+    context = {'singlePost':post}
+    return render(request, 'main/home.html', context)
 
 # def Posts(request, uid):
 #     posts = Post.objects.all()
